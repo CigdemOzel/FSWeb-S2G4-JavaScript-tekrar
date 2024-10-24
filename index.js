@@ -74,7 +74,7 @@ console.log(CemberinCevresi) ;
 function CemberinAlani(cemberinYaricapi, pi) {
   return pi * cemberinYaricapi * cemberinYaricapi
 }
-let cemberinYaricapi = 15
+cemberinYaricapi = 15
 console.log(CemberinAlani) ;
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -98,18 +98,18 @@ console.log(CemberinAlani) ;
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
-let ucetambolunenler,
+let ucetambolunenler = [],
   enkucuk,
   enbuyuk,
   ucebolunenlerintoplami,
   besyuzdenkucuksayilar,
   siralisayilar,
-  tekraredensayilar;
+  tekraredensayilar = [];
 
 // 3a çözümü
 
-let enkucuk = sayilar[0]
-let enbuyuk = sayilar[0]
+enkucuk = sayilar[0]
+enbuyuk = sayilar[0]
 for( let i = 1 ; i<sayilar.length ; i++) {
   if ( sayilar[i] < enkucuk) {
     enkucuk = sayilar[i]
@@ -121,7 +121,7 @@ for( let i = 1 ; i<sayilar.length ; i++) {
 
 // 3b çözümü:
 
-const ucetambolunenler = []
+
 sayilar.forEach(sayi => {
   if (sayi % 3 === 0) {
     ucetambolunenler.push(sayi)
@@ -132,15 +132,15 @@ sayilar.forEach(sayi => {
 
 // 3c çözümü:
 
-const ucebolunenlerintoplami = ucetambolunenler.reduce((toplam,sayi) => toplam + sayi , 0)
+ucebolunenlerintoplami = ucetambolunenler.reduce((toplam,sayi) => toplam + sayi , 0)
 
 // 3d çözümü
 
-const besyuzdenkucuksayilar =sayilar.filter(sayi => sayi < 500)
+besyuzdenkucuksayilar =sayilar.filter(sayi => sayi < 500)
 
 // 3e çözümü
 
-const siralisayilar = besyuzdenkucuksayilar.sort((a,b) => a-b)
+siralisayilar = besyuzdenkucuksayilar.sort((a,b) => a-b)
 
 // 3f çözümü
 
@@ -152,12 +152,19 @@ sayilar.forEach(sayi => {
     tekrarSayilari[sayi] = 1
   }
 })
-const tekraredensayilar = []
+tekraredensayilar = []
 for(const sayi in tekrarSayilari) {
   if (tekrarSayilari [sayi] > 1) {
     tekraredensayilar.push ( `${sayi} sayısı ${tekrarSayilari[sayi]} kere tekrar edilmiştir. `)
   }
 }
+console.log("En küçük sayı:", enkucuk);
+console.log("En büyük sayı:", enbuyuk);
+console.log("Üçte tam bölünenler:", ucetambolunenler);
+console.log("Üçte tam bölünenlerin toplamı:", ucebolunenlerintoplami);
+console.log("500'den küçük sayılar:", besyuzdenkucuksayilar);
+console.log("Sıralı sayılar:", siralisayilar);
+console.log("Tekrar eden sayılar:", tekraredensayilar);
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
