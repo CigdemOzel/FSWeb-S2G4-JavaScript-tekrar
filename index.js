@@ -135,6 +135,8 @@ sayilar.forEach(sayi => {
 ucebolunenlerintoplami = ucetambolunenler.reduce((toplam,sayi) => toplam + sayi , 0)
 
 
+
+
 // 3d çözümü
 
 besyuzdenkucuksayilar =sayilar.filter(sayi => sayi < 500)
