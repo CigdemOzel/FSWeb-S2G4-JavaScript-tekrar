@@ -38,7 +38,12 @@ const sayilar = [
 //Örneğin çözümü:
 function KareninAlani(kenaruzunlugu) {
   return kenaruzunlugu * kenaruzunlugu;
+  
 }
+let kenarUzunlugu = 10
+console.log(KareninAlani);
+
+
 
 /* (Oto test yok) Yukarıdaki KareninAlani fonksiyonunu kenar uzunluğu = 10 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -50,9 +55,11 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(cemberinYaricapi) {
+  return 2 * pi * cemberinYaricapi
 }
+let cemberinYaricapi = 5
+console.log(CemberinCevresi) ;
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -64,9 +71,11 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(cemberinYaricapi, pi) {
+  return pi * cemberinYaricapi * cemberinYaricapi
 }
+let cemberinYaricapi = 15
+console.log(CemberinAlani) ;
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -99,27 +108,56 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+let enkucuk = sayilar[0]
+let enbuyuk = sayilar[0]
+for( let i = 1 ; i<sayilar.length ; i++) {
+  if ( sayilar[i] < enkucuk) {
+    enkucuk = sayilar[i]
+  }
+  if ( sayilar[i] > enbuyuk) {
+    enbuyuk = sayilar[i]
+  }
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+const ucetambolunenler = []
+sayilar.forEach(sayi => {
+  if (sayi % 3 === 0) {
+    ucetambolunenler.push(sayi)
+  }
+}
+
+)
 
 // 3c çözümü:
 
-/* kodlar buraya */
+const ucebolunenlerintoplami = ucetambolunenler.reduce((toplam,sayi) => toplam + sayi , 0)
 
 // 3d çözümü
 
-/* kodlar buraya */
+const besyuzdenkucuksayilar =sayilar.filter(sayi => sayi < 500)
 
 // 3e çözümü
 
-/* kodlar buraya */
+const siralisayilar = besyuzdenkucuksayilar.sort((a,b) => a-b)
 
 // 3f çözümü
 
-/* kodlar buraya */
+const tekrarSayilari = {}
+sayilar.forEach(sayi => {
+  if( tekrarSayilari[sayi]) {
+    tekrarSayilari[sayi]  ++
+  } else {
+    tekrarSayilari[sayi] = 1
+  }
+})
+const tekraredensayilar = []
+for(const sayi in tekrarSayilari) {
+  if (tekrarSayilari [sayi] > 1) {
+    tekraredensayilar.push ( `${sayi} sayısı ${tekrarSayilari[sayi]} kere tekrar edilmiştir. `)
+  }
+}
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
