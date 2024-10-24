@@ -134,6 +134,7 @@ sayilar.forEach(sayi => {
 
 ucebolunenlerintoplami = ucetambolunenler.reduce((toplam,sayi) => toplam + sayi , 0)
 
+
 // 3d çözümü
 
 besyuzdenkucuksayilar =sayilar.filter(sayi => sayi < 500)
@@ -171,7 +172,7 @@ console.log("Tekrar eden sayılar:", tekraredensayilar);
 function sa() {
   console.log("Kodlar çalışıyor");
   return "as";
-  
+
 }
 sa();
 module.exports = {
